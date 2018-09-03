@@ -1,0 +1,40 @@
+{
+  "name": "verse/run",
+  "description": "Php framework that provide easy way to create php micro-services",
+  "keywords": ["framework", "microservices", "microservice"],
+  "homepage": "http://github.com/vetermanve/verse_run/",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mikhail Denisov",
+      "email": "manwebdev@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
+  "suggest": {
+    "ext-amqp": "Allow receiving http requests from AMQP server (1.0+ required)"
+  },
+  "autoload": {
+    "psr-4": {"Verse\\Run\\": "src/Verse/Run"}
+  },
+  "autoload-dev": {
+    "psr-4": {"Verse\\Run\\": "tests/Verse/Run"}
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "develop"
+    }
+  },
+  "scripts": {
+    "test": [
+      "parallel-lint . --exclude vendor",
+      "phpunit"
+    ]
+  }
+}
