@@ -5,7 +5,7 @@ namespace Verse\Run\Provider;
 
 
 use Mu\Env;
-use Router\Actors\RouterRequestConsumer;
+use Verse\Router\Actors\RouterRequestConsumer;
 use Verse\Run\RunContext;
 use Verse\Run\RunRequest;
 use Verse\Run\Spec\AmqpHttpRequest;
