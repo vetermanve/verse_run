@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Run\Module;
+namespace Verse\Run\Module;
 
-use Run\RunModuleProto;
+use Verse\Run\RunModuleProto;
 
 class ServicesModule extends RunModuleProto
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Rest\Exception;
+namespace Verse\Run\Rest\Exception;
 
 
 class Redirect extends \Exception

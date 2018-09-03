@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Run\Component;
+namespace Verse\Run\Component;
 
 
-use Run\ChannelMessage\ChannelMsg;
-use Run\RunContext;
-use Run\Spec\HttpRequestMetaSpec;
-use Run\Spec\HttpResponseSpec;
-use Run\Util\UnexpectedEndHandler;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\RunContext;
+use Verse\Run\Spec\HttpRequestMetaSpec;
+use Verse\Run\Spec\HttpResponseSpec;
+use Verse\Run\Util\UnexpectedEndHandler;
 
 class UnexpectedShutdownHandler extends RunComponentProto
 {

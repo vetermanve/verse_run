@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Run\Rest;
+namespace Verse\Run\Rest;
 
 
 use Mu\Interfaces\DispatcherInterface;
-use Run\Rest\Exception\Redirect;
-use Run\RunRequest;
-use Run\Spec\HttpRequestMetaSpec;
-use Run\Util\ChannelState;
+use Verse\Run\Rest\Exception\Redirect;
+use Verse\Run\RunRequest;
+use Verse\Run\Spec\HttpRequestMetaSpec;
+use Verse\Run\Util\ChannelState;
 
 class RestRequestOptions implements DispatcherInterface
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run;
+namespace Verse\Run;
 
 
 class RunConfig

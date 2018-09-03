@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Run\Channel;
+namespace Verse\Run\Channel;
 
 
-use Run\ChannelMessage\ChannelMsg;
-use Run\RunModuleProto;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\RunModuleProto;
 
 abstract class DataChannelProto extends RunModuleProto
 {

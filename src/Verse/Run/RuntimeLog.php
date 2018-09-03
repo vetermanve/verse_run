@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Run;
+namespace Verse\Run;
 
 
 use Monolog\Logger;
-use Run\Util\Tracer;
+use Verse\Run\Util\Tracer;
 
 class RuntimeLog extends Logger
 {

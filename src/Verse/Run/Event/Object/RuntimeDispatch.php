@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Run\Event\Object;
+namespace Verse\Run\Event\Object;
 
 
 use Mu\Interfaces\DescribableInterface;
-use Run\Event\EventConfig;
+use Verse\Run\Event\EventConfig;
 
 class RuntimeDispatch extends EventObjectProto
 {

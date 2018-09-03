@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Run\Module;
+namespace Verse\Run\Module;
 
 
-use Run\RunContext;
-use Run\RunModuleProto;
+use Verse\Run\RunContext;
+use Verse\Run\RunModuleProto;
 
 class RpcServices extends RunModuleProto
 {

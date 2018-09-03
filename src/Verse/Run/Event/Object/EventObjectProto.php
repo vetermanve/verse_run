@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Event\Object;
+namespace Verse\Run\Event\Object;
 
 
 abstract class EventObjectProto

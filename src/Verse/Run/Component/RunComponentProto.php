@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Run\Component;
+namespace Verse\Run\Component;
 
 
-use Run\RunModuleProto;
+use Verse\Run\RunModuleProto;
 
 abstract class RunComponentProto extends RunModuleProto
 {

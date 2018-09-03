@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Run\Execution;
+namespace Verse\Run\Execution;
 
 
 use Mu\Interfaces\DispatcherInterface;
-use Run\Rest\RestRequestOptions;
-use Run\RunModuleProto;
-use Run\RunRequest;
-use Run\Spec\HttpRequestMetaSpec;
+use Verse\Run\Rest\RestRequestOptions;
+use Verse\Run\RunModuleProto;
+use Verse\Run\RunRequest;
+use Verse\Run\Spec\HttpRequestMetaSpec;
 
 class RestAppExecution extends RunModuleProto
 {

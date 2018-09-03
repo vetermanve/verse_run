@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Run\ChannelMessage;
+namespace Verse\Run\ChannelMessage;
 
 
-use Run\Spec\HttpResponseSpec;
+use Verse\Run\Spec\HttpResponseSpec;
 
 class HttpReply extends ChannelMsg
 {

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Run\Tests;
+namespace Verse\Run\Tests;
 
 
-use Run\Channel\MemoryStoreChannel;
-use Run\Component\UnexpectedShutdownHandler;
-use Run\RunCore;
-use Run\RuntimeLog;
+use Verse\Run\Channel\MemoryStoreChannel;
+use Verse\Run\Component\UnexpectedShutdownHandler;
+use Verse\Run\RunCore;
+use Verse\Run\RuntimeLog;
 use Testing\TestBase;
 
 require_once __DIR__.'/../../Testing/bootstrap.php';

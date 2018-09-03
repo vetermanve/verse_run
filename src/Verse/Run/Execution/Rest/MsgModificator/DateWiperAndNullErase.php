@@ -1,11 +1,11 @@
 <?php
 
-namespace Run\Execution\Rest\MsgModificator;
+namespace Verse\Run\Execution\Rest\MsgModificator;
 
 use Mu\Helper\DateTime;
-use Run\ChannelMessage\ChannelMsg;
-use Run\Execution\PluginProto;
-use Run\RunRequest;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\Execution\PluginProto;
+use Verse\Run\RunRequest;
 
 class DateWiperAndNullErase extends MsgModificatorProto
 {

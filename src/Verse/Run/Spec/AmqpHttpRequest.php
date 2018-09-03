@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Spec;
+namespace Verse\Run\Spec;
 
 
 class AmqpHttpRequest

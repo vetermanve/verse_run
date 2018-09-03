@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Util;
+namespace Verse\Run\Util;
 
 
 use Mu\Dispatcher;
@@ -10,8 +10,8 @@ use Mu\Registry;
 use Mu\Validate\Request;
 use Json\ValidationException;
 use Json\Validator;
-use Run\RunRequest;
-use Run\Spec\HttpRequestMetaSpec;
+use Verse\Run\RunRequest;
+use Verse\Run\Spec\HttpRequestMetaSpec;
 
 class SchemaChecker
 {

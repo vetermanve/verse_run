@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Run\Module;
+namespace Verse\Run\Module;
 
 
 use Mu\Interfaces\ConfigInterface;
-use Run\RunContext;
-use Run\RunModuleProto;
+use Verse\Run\RunContext;
+use Verse\Run\RunModuleProto;
 
 class ConfigModule extends RunModuleProto implements ConfigInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Run\Channel;
+namespace Verse\Run\Channel;
 
 
-use Run\ChannelMessage\ChannelMsg;
+use Verse\Run\ChannelMessage\ChannelMsg;
 
 class MemoryStoreChannelStack extends DataChannelProto
 {

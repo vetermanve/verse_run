@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Run\Schema;
+namespace Verse\Run\Schema;
 
 
-use Run\RunModuleProto;
+use Verse\Run\RunModuleProto;
 
 abstract class RunSchemaProto extends RunModuleProto
 {

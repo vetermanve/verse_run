@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Run\Processor;
+namespace Verse\Run\Processor;
 
 
-use Run\ChannelMessage\ChannelMsg;
-use Run\Execution\Rest\MsgModificator\MsgModificatorProto;
-use Run\RunModuleProto;
-use Run\RunRequest;
-use Run\Util\SessionBuilder;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\Execution\Rest\MsgModificator\MsgModificatorProto;
+use Verse\Run\RunModuleProto;
+use Verse\Run\RunRequest;
+use Verse\Run\Util\SessionBuilder;
 
 abstract class RunRequestProcessorProto extends RunModuleProto
 {

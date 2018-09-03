@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Run;
+namespace Verse\Run;
 
 
-use Run\Channel\DataChannelProto;
-use Run\Component\RunComponentProto;
-use Run\Component\DependencyManagerProto;
-use Run\Processor\RunRequestProcessorProto;
-use Run\Provider\RunProviderProto;
-use Run\Schema\RunSchemaProto;
+use Verse\Run\Channel\DataChannelProto;
+use Verse\Run\Component\RunComponentProto;
+use Verse\Run\Component\DependencyManagerProto;
+use Verse\Run\Processor\RunRequestProcessorProto;
+use Verse\Run\Provider\RunProviderProto;
+use Verse\Run\Schema\RunSchemaProto;
 
 class RunCore extends RunModuleProto
 {

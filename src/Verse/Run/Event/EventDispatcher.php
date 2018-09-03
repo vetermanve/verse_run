@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Run\Event;
+namespace Verse\Run\Event;
 
 
-use Run\Event\Object\EventObjectProto;
+use Verse\Run\Event\Object\EventObjectProto;
 
 class EventDispatcher
 {

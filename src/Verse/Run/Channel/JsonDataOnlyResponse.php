@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Run\Channel;
+namespace Verse\Run\Channel;
 
 
-use Run\ChannelMessage\ChannelMsg;
-use Run\RunConfig;
-use Run\RunContext;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\RunConfig;
+use Verse\Run\RunContext;
 
 class JsonDataOnlyResponse extends JsonHttpResponseChannel
 {

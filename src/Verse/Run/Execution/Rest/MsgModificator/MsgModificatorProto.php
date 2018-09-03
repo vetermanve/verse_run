@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Run\Execution\Rest\MsgModificator;
+namespace Verse\Run\Execution\Rest\MsgModificator;
 
 
-use Run\ChannelMessage\ChannelMsg;
-use Run\RunRequest;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\RunRequest;
 
 abstract class MsgModificatorProto 
 {

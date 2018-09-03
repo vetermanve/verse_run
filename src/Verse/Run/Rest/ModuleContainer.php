@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Rest;
+namespace Verse\Run\Rest;
 
 use Mu\Interfaces\ContainerInterface;
 

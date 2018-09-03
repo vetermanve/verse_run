@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Util;
+namespace Verse\Run\Util;
 
 
 use Auth\Session\LocalSession;
@@ -15,8 +15,8 @@ use Mu\OAuth\OAuth2Storage\iContoServices;
 use Mu\Service\Auth\AuthService;
 use OAuth2\OAuth2;
 use OAuth2\OAuth2ServerException;
-use Run\RunModuleProto;
-use Run\RunRequest;
+use Verse\Run\RunModuleProto;
+use Verse\Run\RunRequest;
 
 class SessionBuilder extends RunModuleProto
 {

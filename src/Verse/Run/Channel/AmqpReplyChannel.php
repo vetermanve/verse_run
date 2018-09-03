@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Run\Channel;
+namespace Verse\Run\Channel;
 
 
 use Mu\Env;
-use Router\Router;
-use Run\ChannelMessage\ChannelMsg;
-use Run\RunContext;
-use Run\Spec\HttpResponseSpec;
+use Verse\Router\Router;
+use Verse\Run\ChannelMessage\ChannelMsg;
+use Verse\Run\RunContext;
+use Verse\Run\Spec\HttpResponseSpec;
 
 class AmqpReplyChannel extends DataChannelProto
 {

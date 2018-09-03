@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Run\ChannelMessage;
+namespace Verse\Run\ChannelMessage;
 
 
-use Run\Util\ChannelState;
+use Verse\Run\Util\ChannelState;
 
 class ChannelMsg
 {

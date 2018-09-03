@@ -1,18 +1,18 @@
 <?php
 
 
-namespace Run\Provider;
+namespace Verse\Run\Provider;
 
 
 use Mu\Env;
 use Router\Actors\RouterRequestConsumer;
-use Run\RunContext;
-use Run\RunRequest;
-use Run\Spec\AmqpHttpRequest;
-use Run\Spec\HttpRequestHeaders;
-use Run\Spec\HttpRequestMetaSpec;
-use Run\Util\HttpParse;
-use Run\Util\RestMethodHelper;
+use Verse\Run\RunContext;
+use Verse\Run\RunRequest;
+use Verse\Run\Spec\AmqpHttpRequest;
+use Verse\Run\Spec\HttpRequestHeaders;
+use Verse\Run\Spec\HttpRequestMetaSpec;
+use Verse\Run\Util\HttpParse;
+use Verse\Run\Util\RestMethodHelper;
 
 class HttpAmqpCloud extends RunProviderProto
 {

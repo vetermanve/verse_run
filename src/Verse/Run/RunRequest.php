@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Run;
+namespace Verse\Run;
 
-use Run\Util\ChannelState;
+use Verse\Run\Util\ChannelState;
 
 class RunRequest
 {

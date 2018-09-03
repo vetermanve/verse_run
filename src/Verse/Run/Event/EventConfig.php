@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Run\Event;
+namespace Verse\Run\Event;
 
 
 class EventConfig
