@@ -27,22 +27,12 @@
     "verse/router" : "dev-master",
     "verse/modular" : "dev-master"
   },
-  "require-dev": {
-    "phpunit/phpunit": "^5.7"
-  },
   "suggest": {
     "ext-amqp": "Allow receiving http requests from AMQP server (1.0+ required)"
   },
   "autoload": {
     "psr-4": {"Verse\\Run\\": "src/Verse/Run"}
   },
-  "autoload-dev": {
-    "psr-4": {"Verse\\Run\\": "tests/Verse/Run"}
-  },
   "scripts": {
-    "test": [
-      "parallel-lint . --exclude vendor",
-      "phpunit"
-    ]
   }
 }
