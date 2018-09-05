@@ -4,7 +4,7 @@
 namespace Verse\Run;
 
 
-use Modular\ModularContextProto;
+use Verse\Modular\ModularContextProto;
 
 class RunContext extends ModularContextProto
 {

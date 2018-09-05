@@ -15,11 +15,17 @@
     {
       "type": "vcs",
       "url": "https://github.com/vetermanve/verse_router"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/vetermanve/verse_modular"
     }
   ],
   "require": {
     "php": "^7.0",
-    "verse/router" : "dev-master"
+    "monolog/monolog" : "*",
+    "verse/router" : "dev-master",
+    "verse/modular" : "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.7"
