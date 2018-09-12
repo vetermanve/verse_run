@@ -4,7 +4,7 @@
 namespace Verse\Run\Rest;
 
 
-use Mu\Interfaces\DispatcherInterface;
+use Verse\Run\Interfaces\DispatcherInterface;
 use Verse\Run\Rest\Exception\Redirect;
 use Verse\Run\RunRequest;
 use Verse\Run\Spec\HttpRequestMetaSpec;

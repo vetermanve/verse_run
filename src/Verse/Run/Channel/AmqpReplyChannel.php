@@ -4,7 +4,7 @@
 namespace Verse\Run\Channel;
 
 
-use Mu\Env;
+use Verse\Di\Env;
 use Verse\Router\Router;
 use Verse\Run\ChannelMessage\ChannelMsg;
 use Verse\Run\RunContext;

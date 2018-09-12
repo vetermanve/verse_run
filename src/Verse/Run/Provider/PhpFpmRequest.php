@@ -9,7 +9,7 @@ use Verse\Run\RunRequest;
 use Verse\Run\Spec\HttpRequestMetaSpec;
 use Verse\Run\Util\HttpEnvContext;
 use Verse\Run\Util\RestMethodHelper;
-use Uuid\Uuid;
+use Verse\Run\Util\Uuid;
 
 class PhpFpmRequest extends RunProviderProto
 {

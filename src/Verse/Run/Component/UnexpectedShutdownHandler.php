@@ -39,7 +39,7 @@ class UnexpectedShutdownHandler extends RunComponentProto
             'error' => 'Internal Error.',
         ];
         
-        if ($this->context->getEnv(RunContext::ENV_DEBUG) || $lastRequest->getMetaItem(HttpRequestMetaSpec::REQUEST_HEADERS, 'x-real-debug') == 'awesome') {
+        if ($this->context->getEnv(RunContext::ENV_DEBUG)) {
             $msg->body['error_details'] = $error;
         }
         

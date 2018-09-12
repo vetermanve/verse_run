@@ -67,10 +67,10 @@ class JsonHttpResponseChannel extends DataChannelProto
         }
         
         $this->_writeBody($msg);
-        $this->runtime->debug('REST_RAW_RESPONSE', $msg->getDebugInfo());
+        $this->runtime->debug('RAW_RESPONSE', $msg->getDebugInfo());
     }
     
     protected function _writeBody(ChannelMsg $msg) {
-        echo is_string($msg->body) ? $msg->body : json_encode($msg->body !== null ? $msg->body : new \stdClass(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);   
+        echo \is_string($msg->body) ? $msg->body : json_encode($msg->body !== null ? $msg->body : new \stdClass(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);   
     }
 }

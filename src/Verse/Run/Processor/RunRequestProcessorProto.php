@@ -5,7 +5,7 @@ namespace Verse\Run\Processor;
 
 
 use Verse\Run\ChannelMessage\ChannelMsg;
-use Verse\Run\Execution\Rest\MsgModificator\MsgModificatorProto;
+use Verse\Run\Interfaces\MessageModificator;
 use Verse\Run\RunModuleProto;
 use Verse\Run\RunRequest;
 use Verse\Run\Util\SessionBuilder;
@@ -13,15 +13,10 @@ use Verse\Run\Util\SessionBuilder;
 abstract class RunRequestProcessorProto extends RunModuleProto
 {
     /**
-     * @var MsgModificatorProto[]
+     * @var MessageModificator[]
      */
     protected $msgModificators = [];
-    
-    /**
-     * @var SessionBuilder
-     */
-    protected $sessionBuilder;
-    
+
     abstract public function prepare();
     abstract public function process(RunRequest $request);
     
@@ -36,24 +31,8 @@ abstract class RunRequestProcessorProto extends RunModuleProto
         return $this->core->getDataChannel()->send($response);
     }
     
-    public function addMsgModificator (MsgModificatorProto $modificator) 
+    public function addMsgModificator (MessageModificator $modificator) 
     {
         $this->msgModificators[] = $modificator;
-    }
-    
-    /**
-     * @return SessionBuilder
-     */
-    public function getSessionBuilder()
-    {
-        return $this->sessionBuilder;
-    }
-    
-    /**
-     * @param SessionBuilder $sessionBuilder
-     */
-    public function setSessionBuilder($sessionBuilder)
-    {
-        $this->sessionBuilder = $sessionBuilder;
     }
 }

@@ -6,7 +6,6 @@ namespace Verse\Run;
 
 use Verse\Run\Channel\DataChannelProto;
 use Verse\Run\Component\RunComponentProto;
-use Verse\Run\Component\DependencyManagerProto;
 use Verse\Run\Processor\RunRequestProcessorProto;
 use Verse\Run\Provider\RunProviderProto;
 use Verse\Run\Schema\RunSchemaProto;

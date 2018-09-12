@@ -20,7 +20,7 @@ class MemoryStoreChannel extends DataChannelProto
      */
     public function prepare()
     {
-        // TODO: Implement prepare() method.
+        
     }
     
     /**

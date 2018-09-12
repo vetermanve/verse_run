@@ -172,14 +172,14 @@ class ChannelMsg
         $this->code = $code;
     }
     
-    public function getDebugInfo()
+    public function getDebugInfo() : array
     {
         return [
             'code'             => $this->code,
             'destination'      => $this->destination,
             'channel_data'     => $this->channelState ? $this->channelState->getData() : null,
             'channel_signed'   => $this->channelState ? $this->channelState->getSigned() : null,
-            'body_type'        => gettype($this->body),
+            'body_type'        => \gettype($this->body),
         ];
     }
 }

@@ -11,21 +11,13 @@
       "email": "manwebdev@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/vetermanve/verse_router"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/vetermanve/verse_modular"
-    }
-  ],
   "require": {
     "php": "^7.0",
     "monolog/monolog" : "*",
     "verse/router" : "dev-master",
-    "verse/modular" : "dev-master"
+    "verse/modular" : "dev-master",
+    "verse/env" : "dev-master",
+    "lootils/uuid": "^1.0"
   },
   "suggest": {
     "ext-amqp": "Allow receiving http requests from AMQP server (1.0+ required)"

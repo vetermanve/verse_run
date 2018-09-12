@@ -4,8 +4,9 @@
 namespace Verse\Run\Provider;
 
 
-use Mu\Env;
+use Verse\Di\Env;
 use Verse\Router\Actors\RouterRequestConsumer;
+use Verse\Router\Router;
 use Verse\Run\RunContext;
 use Verse\Run\RunRequest;
 use Verse\Run\Spec\AmqpHttpRequest;
@@ -22,19 +23,25 @@ class HttpAmqpCloud extends RunProviderProto
      * @var RouterRequestConsumer
      */
     private $consumer;
+
+    /**
+     * @var \Verse\Router\Router
+     */
+    private $router;
     
     public function prepare()
     {
         $queueName = $this->context->get(RunContext::QUEUE_INCOMING, 'http.amqp.cloud.requests.default');
         $amqpCustomHost  = $this->context->get(RunContext::AMQP_REQUEST_CLOUD_HOST);
         $amqpCustomPort  = $this->context->get(RunContext::AMQP_REQUEST_CLOUD_PORT);
+        
+        $this->router = Env::getContainer()->bootstrap(Router::class, true);
     
         if ($amqpCustomHost) {
-            Env::getRouter()->registerQueue($queueName, $amqpCustomHost, $amqpCustomPort);    
+            $this->router->registerQueue($queueName, $amqpCustomHost, $amqpCustomPort);    
         }
         
-        $this->consumer = Env::getRouter()->getConsumer($queueName);
-//        $this->consumer->setEventDispatcher(Env::getEventDispatcher());
+        $this->consumer = $this->router->getConsumer($queueName);
     }
     
     public function run()
