@@ -65,10 +65,8 @@ class PhpFpmRequest extends RunProviderProto
             HttpRequestMetaSpec::CLIENT_LOCALE   => isset($locale) ? $locale : null,
         ];
     
-        if ($request->getParamOrData('dddebug') === 4) {
-            $this->context->setEnv(RunContext::ENV_DEBUG, 1);
-            $this->context->setEnv(RunContext::REQUEST_PROFILING_ENABLED, 1);
-        }
+        // $this->context->setEnv(RunContext::ENV_DEBUG, 1);
+        // $this->context->setEnv(RunContext::REQUEST_PROFILING_ENABLED, 1);
     
         $request->body = &$this->httpEnv->getLink(HttpEnvContext::HTTP_POST_BODY, '');
     

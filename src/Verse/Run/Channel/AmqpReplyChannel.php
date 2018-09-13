@@ -30,7 +30,7 @@ class AmqpReplyChannel extends DataChannelProto
     
     public function prepare()
     {
-        $this->router = Env::getRouter();
+        $this->router = Env::getContainer()->bootstrap(\Verse\Router\Router::class);
         $this->identity = $this->context->get(RunContext::IDENTITY);
         $this->replyHost = $this->context->get(RunContext::AMQP_REQUEST_CLOUD_HOST);
         $this->replyPort = $this->context->get(RunContext::AMQP_REQUEST_CLOUD_PORT);

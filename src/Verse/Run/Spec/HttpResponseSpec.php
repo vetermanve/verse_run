@@ -31,6 +31,14 @@ class HttpResponseSpec
     const META_HTTP_HEADER_LOCATION = 'Location';
     const META_HTTP_HEADER_EXECUTION_TIME  = 'X-Time';
     const META_HTTP_HEADER_CONTENT_TYPE  = 'Content-Type';
+
+    const META_HTT_HEADER_EXPIRES = 'Expires';
+    const META_HTT_HEADER_PRAGMA  = 'Pragma';
+    const META_HTT_HEADER_CACHE_CONTROL = 'Cache-Control';
+    const META_HTT_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS = 'Access-Control-Allow-Credentials';
+    const META_HTT_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS = 'Access-Control-Expose-Headers';
+    const META_HTT_HEADER_ACCESS_CONTROL_ALLOW_METHODS = 'Access-Control-Allow-Methods';
+    const META_HTT_HEADER_ACCESS_CONTROL_ALLOW_HEADERS = 'Access-Control-Allow-Headers';
     
     const MESSAGE    = 'msg';
     const STATUS     = 'status';
@@ -44,13 +52,13 @@ class HttpResponseSpec
     const CONTENT_TEXT = 'text/plain; charset=UTF-8';
     
     public static $absoluteHeaders = [
-        'Access-Control-Allow-Headers'      => 'Origin, Accept, X-Suppress-HTTP-Code, Content-Type, X-Rest-App, Authorization',
-        'Access-Control-Allow-Methods'      => 'POST, GET, OPTIONS, DELETE, HEAD, PUT, COUNT',
-        'Access-Control-Expose-Headers'     => 'X-Status-Code, Content-Type, X-Application',
-        'Access-Control-Allow-Credentials'  => 'true',
-        self::META_HTTP_HEADER_CONTENT_TYPE => self::CONTENT_JSON,
-        'Cache-Control'                     => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
-        'Pragma'                            => 'no-cache',
-        'Expires'                           => '0',
+        self::META_HTT_HEADER_ACCESS_CONTROL_ALLOW_HEADERS     => 'Origin, Accept, X-Suppress-HTTP-Code, Content-Type, X-Rest-App, Authorization',
+        self::META_HTT_HEADER_ACCESS_CONTROL_ALLOW_METHODS     => 'POST, GET, OPTIONS, DELETE, HEAD, PUT, COUNT',
+        self::META_HTT_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS    => 'X-Status-Code, Content-Type, X-Application',
+        self::META_HTT_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS => 'true',
+        self::META_HTTP_HEADER_CONTENT_TYPE                    => self::CONTENT_JSON,
+        self::META_HTT_HEADER_CACHE_CONTROL                    => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+        self::META_HTT_HEADER_PRAGMA                           => 'no-cache',
+        self::META_HTT_HEADER_EXPIRES                          => '0',
     ];
 }

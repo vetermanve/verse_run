@@ -8,7 +8,6 @@ use Verse\Run\ChannelMessage\ChannelMsg;
 use Verse\Run\Interfaces\MessageModificator;
 use Verse\Run\RunModuleProto;
 use Verse\Run\RunRequest;
-use Verse\Run\Util\SessionBuilder;
 
 abstract class RunRequestProcessorProto extends RunModuleProto
 {
