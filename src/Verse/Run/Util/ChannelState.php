@@ -128,15 +128,15 @@ class ChannelState
             $value = $this->data[$key];
             
             $expireAt = isset($this->expiresAt[$key]) ? $this->expiresAt[$key] : $time + self::DEFAULT_TTL;
-            if (is_null($value)) {
+            if ($value === null) {
                 $this->packed[$key] = null;
-            } else if($this->encoder == self::ENCODE_JSON_SIMPLE) {
+            } else if($this->encoder === self::ENCODE_JSON_SIMPLE) {
                 $this->packed[$key] = self::ENCODE_JSON_SIMPLE
                     . self::PACK_DELIMITER
                     . $expireAt
                     . self::PACK_DELIMITER
                     . json_encode($value, JSON_UNESCAPED_UNICODE);
-            } else if($this->encoder == self::ENCODE_CAT) {
+            } else if($this->encoder === self::ENCODE_CAT) {
                 $this->packed[$key] = self::ENCODE_JSON_SIMPLE
                     . self::PACK_DELIMITER
                     . $expireAt

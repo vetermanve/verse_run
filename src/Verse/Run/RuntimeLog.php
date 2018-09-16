@@ -39,7 +39,7 @@ class RuntimeLog extends Logger
      *
      * @return bool
      */
-    public function addRecord(int $level, string $message, array $context = array()) : bool
+    public function addRecord($level, $message, array $context = array()) : bool
     {
         $context += $this->context;
         

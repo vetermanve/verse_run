@@ -5,7 +5,6 @@ namespace Verse\Run\Channel;
 
 
 use Verse\Run\ChannelMessage\ChannelMsg;
-use Verse\Run\RunConfig;
 use Verse\Run\RunContext;
 
 class JsonDataOnlyResponse extends JsonHttpResponseChannel

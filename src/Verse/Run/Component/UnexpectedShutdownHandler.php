@@ -25,7 +25,7 @@ class UnexpectedShutdownHandler extends RunComponentProto
             return ;
         }
         
-        $this->runtime->critical('RUN_CRASH after request', [
+        $this->runtime->critical('RUN_CRASHED_REQUEST', [
             'request_id' => $lastRequest->getUid(),
             'resource' => $lastRequest->getResource(),
             'data' => $lastRequest->data,
