@@ -7,7 +7,7 @@ use Verse\Run\RunRequest;
 
 class BasicMvcRequestRouter implements RequestRouterInterface
 {
-    private $_namespacePrefix = '\\App';
+    private $_rootNamespace = 'App';
 
     public function getClassByRequest(RunRequest $request) : string 
     {
@@ -27,22 +27,22 @@ class BasicMvcRequestRouter implements RequestRouterInterface
             $moduleName = $controllerName = 'Landing';
         }
         
-        return $this->_namespacePrefix.'\\'.$moduleName.'\\Controller\\'.$controllerName;
+        return '\\'.$this->_rootNamespace.'\\'.$moduleName.'\\Controller\\'.$controllerName;
     }
 
     /**
      * @return string
      */
-    public function getNamespacePrefix() : string
+    public function getRootNamespace() : string
     {
-        return $this->_namespacePrefix;
+        return $this->_rootNamespace;
     }
 
     /**
      * @param string $namespacePrefix
      */
-    public function setNamespacePrefix(string $namespacePrefix)
+    public function setRootNamespace(string $namespacePrefix)
     {
-        $this->_namespacePrefix = $namespacePrefix;
+        $this->_rootNamespace = $namespacePrefix;
     }
 }

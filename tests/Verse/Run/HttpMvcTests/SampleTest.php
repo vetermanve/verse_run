@@ -41,7 +41,7 @@ class SampleTest extends \PHPUnit_Framework_TestCase
         $processor = new SimpleRestProcessor();
         
         $requestRouter = new BasicMvcRequestRouter();
-        $requestRouter->setNamespacePrefix('\\'.__NAMESPACE__);
+        $requestRouter->setRootNamespace(__NAMESPACE__);
         
         $processor->setRequestRouter($requestRouter);
         $core->setProcessor($processor);
