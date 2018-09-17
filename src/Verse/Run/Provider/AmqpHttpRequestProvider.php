@@ -15,7 +15,7 @@ use Verse\Run\Spec\HttpRequestMetaSpec;
 use Verse\Run\Util\HttpParse;
 use Verse\Run\Util\RestMethodHelper;
 
-class HttpAmqpCloud extends RunProviderProto
+class AmqpHttpRequestProvider extends RequestProviderProto
 {
     private $restarting = true;
     
@@ -117,7 +117,7 @@ class HttpAmqpCloud extends RunProviderProto
             $this->runtime->runtime('AMQP_STATE', ['state' => $amqpRequest[AmqpHttpRequest::STATE]]);
             foreach ($amqpRequest[AmqpHttpRequest::STATE] as $stateKey => $stateDataList) {
                 list($stateValue, $stateExpiresAt) = $stateDataList;
-                if (!is_null($stateValue)) {
+                if ($stateValue !== null) {
                     $channelState->set($stateKey, $stateValue, $stateExpiresAt);    
                 }
             }

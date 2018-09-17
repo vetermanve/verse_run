@@ -1,16 +1,15 @@
 <?php
 
 
-namespace Verse\Run\Rest;
+namespace Verse\Run\RequestWrapper;
 
 
-use Verse\Run\Interfaces\DispatcherInterface;
-use Verse\Run\Rest\Exception\Redirect;
+use Verse\Run\Interfaces\HttpRequestDataWrapperInterface;
 use Verse\Run\RunRequest;
 use Verse\Run\Spec\HttpRequestMetaSpec;
 use Verse\Run\Util\ChannelState;
 
-class RestRequestOptions implements DispatcherInterface
+class RunHttpRequestWrapper implements HttpRequestDataWrapperInterface
 {
     /**
      * @var RunRequest;
@@ -117,14 +116,6 @@ class RestRequestOptions implements DispatcherInterface
     }
     
     /**
-     * @return array
-     */
-    public function getFilters()
-    {
-        return [];
-    }
-    
-    /**
      * @return string
      */
     public function getBody()
@@ -135,7 +126,7 @@ class RestRequestOptions implements DispatcherInterface
     /**
      * @return string
      */
-    public function getLocale()
+    public function getLocale() : string 
     {
         return $this->request->getMeta(HttpRequestMetaSpec::CLIENT_LOCALE);
     }
@@ -145,29 +136,17 @@ class RestRequestOptions implements DispatcherInterface
      * Фильтрация растпространяется на параметры, получаемые этим методом
      * @return array
      */
-    public function getRequestParams()
+    public function getRequestParams() : array 
     {
         return $this->allParams;
-    }
-    
-    public function setRequestParams($arrayParams)
-    {
-        $this->allParams = $arrayParams + $this->allParams;
     }
     
     /**
      * @return string
      */
-    public function getReqiestId()
+    public function getRequestUuid() :string 
     {
         return $this->request->getUid();
-    }
-    
-    public function redirect($url)
-    {
-        $redirect = new Redirect();
-        $redirect->setUrl($url);
-        throw $redirect;
     }
     
     /**
@@ -176,7 +155,7 @@ class RestRequestOptions implements DispatcherInterface
     public function setRequest($request)
     {
         $this->request = $request;
-        $this->allParams = $this->request->params + $this->request->data;
+        $this->allParams = (array)$this->request->params + (array)$this->request->data;
         $this->state = $request->getChannelState();
     }
     
@@ -187,10 +166,6 @@ class RestRequestOptions implements DispatcherInterface
     
     public function getParamsByKeys($paramsKeys)
     {
-        if (!$paramsKeys) {
-            return $this->allParams; 
-        }
-        
         $result = [];
         
         foreach ($paramsKeys as $key) {
@@ -203,17 +178,7 @@ class RestRequestOptions implements DispatcherInterface
     }
     
     /**
-     * Получение платформы c которой отправлен запрос
-     *
-     * @return string|null
-     */
-    public function getPlatform()
-    {
-        return $this->getHeader('x-rest-app'); 
-    }
-    
-    /**
-     * Получить состояние
+     * Получить состояние клиента
      *
      * @param string $name
      * @param null   $default
@@ -226,7 +191,7 @@ class RestRequestOptions implements DispatcherInterface
     }
     
     /**
-     * Записать состояние
+     * Записать состояние клиента
      *
      * @param string $name
      * @param        $value

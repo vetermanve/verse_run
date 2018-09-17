@@ -11,7 +11,7 @@ use Verse\Run\Util\HttpEnvContext;
 use Verse\Run\Util\RestMethodHelper;
 use Verse\Run\Util\Uuid;
 
-class PhpFpmRequest extends RunProviderProto
+class RegularHttpRequestProvider extends RequestProviderProto
 {
     
     /**

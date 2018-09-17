@@ -4,7 +4,7 @@
 namespace Verse\Run\Interfaces;
 
 
-interface DispatcherInterface
+interface HttpRequestDataWrapperInterface
 {
     /**
      * @return string|null
@@ -53,11 +53,6 @@ interface DispatcherInterface
     public function getResource();
     
     /**
-     * @return array
-     */
-    public function getFilters();
-    
-    /**
      * @return string
      */
     public function getBody();
@@ -68,46 +63,23 @@ interface DispatcherInterface
     /**
      * @return string
      */
-    public function getLocale();
+    public function getLocale() : string ;
     
     /**
      * Получение всех параметров запроса
      * Фильтрация растпространяется на параметры, получаемые этим методом
      * @return array
      */
-    public function getRequestParams();
+    public function getRequestParams() : array;
     
     public function getParamsByKeys ($paramsKeys);
     
     /**
-     *
-     * if ( isset($arrayParams['id']) ) {
-     * $this->setId($arrayParams['id']);
-     * }
-     *
-     * if ( isset($arrayParams['ids']) ) {
-     * $this->setIds($arrayParams['ids']);
-     * }
-     *
-     * @param $arrayParams
-     */
-    public function setRequestParams($arrayParams);
-    
-    /**
      * @return string
      */
-    public function getReqiestId();
+    public function getRequestUuid() : string;
     
-    public function getParam ($key, $default = null); 
-    
-    public function redirect($url);
-    
-    /**
-     * Получение платформы c которой отправлен запрос
-     * 
-     * @return string|null
-     */
-    public function getPlatform();
+    public function getParam ($key, $default = null);
     
     /**
      * Получить состояние

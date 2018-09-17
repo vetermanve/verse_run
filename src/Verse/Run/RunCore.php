@@ -7,7 +7,7 @@ namespace Verse\Run;
 use Verse\Run\Channel\DataChannelProto;
 use Verse\Run\Component\RunComponentProto;
 use Verse\Run\Processor\RunRequestProcessorProto;
-use Verse\Run\Provider\RunProviderProto;
+use Verse\Run\Provider\RequestProviderProto;
 use Verse\Run\Schema\RunSchemaProto;
 
 class RunCore extends RunModuleProto
@@ -15,7 +15,7 @@ class RunCore extends RunModuleProto
     /**
      * Что будем процессить
      * 
-     * @var RunProviderProto
+     * @var RequestProviderProto
      */
     private $provider;
     
@@ -110,7 +110,7 @@ class RunCore extends RunModuleProto
     }
     
     /**
-     * @return RunProviderProto
+     * @return RequestProviderProto
      */
     public function getProvider()
     {
@@ -118,7 +118,7 @@ class RunCore extends RunModuleProto
     }
     
     /**
-     * @param RunProviderProto $provider
+     * @param RequestProviderProto $provider
      */
     public function setProvider($provider)
     {
