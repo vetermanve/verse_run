@@ -30,7 +30,7 @@ class UnexpectedEndHandler
         }
         
         if(!self::$isRegistered) {
-            register_shutdown_function('\Run\Util\UnexpectedEndHandler::runCallbacks');
+            register_shutdown_function(__CLASS__.'::runCallbacks');
             self::$isRegistered = true;
         }
         
