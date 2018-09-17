@@ -17,7 +17,7 @@
     "verse/router" : "dev-master",
     "verse/modular" : "dev-master",
     "verse/env" : "dev-master",
-    "lootils/uuid": "^1.0"
+    "ralouphie/getallheaders": "^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.7"
