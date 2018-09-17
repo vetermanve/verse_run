@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Base\Run;
+namespace Verse\Run\Processor;
 
-use Verse\Run\Processor\SimpleRestProcessor;
 use Verse\Run\RunRequest;
 
 class SimplePageProcessor extends SimpleRestProcessor
