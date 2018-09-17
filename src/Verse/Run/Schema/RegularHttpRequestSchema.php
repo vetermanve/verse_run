@@ -4,7 +4,10 @@
 namespace Verse\Run\Schema;
 
 
+use Verse\Run\Channel\JsonHttpResponseChannel;
+use Verse\Run\Component\CreateDependencyContainer;
 use Verse\Run\Component\UnexpectedShutdownHandler;
+use Verse\Run\Processor\SimpleRestProcessor;
 use Verse\Run\Provider\RegularHttpRequestProvider;
 use Verse\Run\Util\HttpEnvContext;
 
@@ -21,12 +24,12 @@ class RegularHttpRequestSchema extends PreconfiguredSchemaProto
         $provider->setHttpEnv($this->httpEnv);
     
         $this->core->addComponent(new UnexpectedShutdownHandler());
-        $this->core->addComponent(new MainDependencyManager());
+        $this->core->addComponent(new CreateDependencyContainer());
         
         $this->_addCustomComponents();
         
         $this->core->setProvider($provider);
-        $this->core->setProcessor(new BaseRunProcessor());
+        $this->core->setProcessor($this->processor ?? new SimpleRestProcessor());
         $this->core->setDataChannel(new JsonHttpResponseChannel());
     }
     
