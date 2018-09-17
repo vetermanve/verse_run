@@ -22,7 +22,7 @@ abstract class BaseControllerProto
     
     abstract public function run();
     
-    abstract public function validateMethod();
+    abstract public function validateMethod() : bool;
     
     final public function p($name, $default = null)
     {
