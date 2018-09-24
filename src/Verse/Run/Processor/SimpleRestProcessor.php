@@ -19,6 +19,8 @@ class SimpleRestProcessor extends RunRequestProcessorProto
      * @var BasicMvcRequestRouter
      */
     protected $requestRouter;
+    
+    protected $defaultContentType = HttpResponseSpec::CONTENT_JSON;
 
     public function prepare()
     {
@@ -49,7 +51,7 @@ class SimpleRestProcessor extends RunRequestProcessorProto
         $request->meta[HttpRequestMetaSpec::EXECUTION_START] = microtime(1);
         
         $response = $this->_buildResponseObject($request);
-        $response->setHeader(HttpResponseSpec::META_HTTP_HEADER_CONTENT_TYPE, HttpResponseSpec::CONTENT_JSON);
+        $response->setHeader(HttpResponseSpec::META_HTTP_HEADER_CONTENT_TYPE, $this->defaultContentType);
         
         try {
             $controllerClass = $this->requestRouter->getClassByRequest($request);
