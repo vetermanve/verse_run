@@ -15,8 +15,8 @@
     "php": "^7.0",
     "monolog/monolog" : "*",
     "ralouphie/getallheaders": "^2.0",
-    "verse/router": "^0.0.1",
-    "verse/env": "^0.0.1",
+    "verse/router": "^1.0",
+    "verse/env": "*",
     "verse/modular": "^1.0"
   },
   "require-dev": {
