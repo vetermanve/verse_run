@@ -59,7 +59,7 @@ class AmqpReplyChannel extends DataChannelProto
             $this->router->registerQueue($msg->getDestination(), $this->replyHost, $this->replyPort);    
         }
         
-        $this->router->publish($payload, $msg->getDestination(), ['correlation_id' => $msg->getUid()]);
+        $this->router->publish($payload, $msg->getDestination(), false, ['correlation_id' => $msg->getUid()]);
         
         $this->getCore()->getRuntime()->runtime('RUN_AMQP_REPLY_SENT', ['request_id' => $msg->getUid(), 'to' => $msg->getDestination()]);
     }
