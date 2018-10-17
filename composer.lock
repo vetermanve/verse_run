@@ -245,16 +245,16 @@
         },
         {
             "name": "verse/router",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vetermanve/verse_router.git",
-                "reference": "464323b22a78578e2e8716c4cf296b765b1c4fd2"
+                "reference": "f6f8f90065fe4ddcfa50f51ee712483a32f9ae9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vetermanve/verse_router/zipball/464323b22a78578e2e8716c4cf296b765b1c4fd2",
-                "reference": "464323b22a78578e2e8716c4cf296b765b1c4fd2",
+                "url": "https://api.github.com/repos/vetermanve/verse_router/zipball/f6f8f90065fe4ddcfa50f51ee712483a32f9ae9f",
+                "reference": "f6f8f90065fe4ddcfa50f51ee712483a32f9ae9f",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +285,7 @@
                 }
             ],
             "description": "Router is library for wrapping AMQP messaging",
-            "time": "2018-10-01T17:30:49+00:00"
+            "time": "2018-10-17T13:21:17+00:00"
         }
     ],
     "packages-dev": [
