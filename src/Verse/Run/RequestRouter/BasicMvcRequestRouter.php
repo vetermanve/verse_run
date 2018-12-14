@@ -9,7 +9,11 @@ class BasicMvcRequestRouter implements RequestRouterInterface
 {
     private $_rootNamespace = 'App';
 
-    public function getClassByRequest(RunRequest $request) : string 
+    private $_defaultModuleName = 'Landing';
+
+    private $_defaultControllerName = 'Landing';
+
+    public function getClassByRequest(RunRequest $request) : string
     {
         $module = $request->getResourcePart(0);
         if ($module) {
@@ -24,10 +28,11 @@ class BasicMvcRequestRouter implements RequestRouterInterface
                 $controllerName = $moduleName;
             }
         } else {
-            $moduleName = $controllerName = 'Landing';
+            $controllerName = $this->_defaultControllerName;
+            $moduleName = $this->_defaultModuleName;
         }
-        
-        return '\\'.$this->_rootNamespace.'\\'.$moduleName.'\\Controller\\'.$controllerName;
+
+        return '\\' . $this->_rootNamespace . '\\' . $moduleName . '\\Controller\\' . $controllerName;
     }
 
     /**
@@ -44,5 +49,37 @@ class BasicMvcRequestRouter implements RequestRouterInterface
     public function setRootNamespace(string $namespacePrefix)
     {
         $this->_rootNamespace = $namespacePrefix;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultModuleName() : string
+    {
+        return $this->_defaultModuleName;
+    }
+
+    /**
+     * @param string $defaultModule
+     */
+    public function setDefaultModuleName(string $defaultModule)
+    {
+        $this->_defaultModuleName = $defaultModule;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultControllerName() : string
+    {
+        return $this->_defaultControllerName;
+    }
+
+    /**
+     * @param string $defaultController
+     */
+    public function setDefaultControllerName(string $defaultController)
+    {
+        $this->_defaultControllerName = $defaultController;
     }
 }
