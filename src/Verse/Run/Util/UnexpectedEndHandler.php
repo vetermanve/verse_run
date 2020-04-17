@@ -20,6 +20,7 @@ class UnexpectedEndHandler
         E_USER_NOTICE  => 1,
         E_WARNING      => 1,
         E_USER_WARNING => 1,
+        E_USER_DEPRECATED => 1,
     ];
     
     public static function addCallback ($callable) 
