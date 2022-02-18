@@ -118,7 +118,15 @@ class ChannelState
         $this->expiresAt[$key] = 0;
         $this->touched[$key] = $key;
     }
-    
+
+    /**
+     * Create array with keys of state data and serialized to string values of this state key
+     *
+     * By default serializing only touched keys, that was actually set during runtime
+     *
+     * @param bool $allData forcing to serialize all the data in state
+     * @return array
+     */
     public function pack($allData = false)
     {
         $this->packed = [];
