@@ -119,12 +119,14 @@ class ChannelState
         $this->touched[$key] = $key;
     }
     
-    public function pack()
+    public function pack($allData = false)
     {
         $this->packed = [];
         $time = time();
+
+        $keysToPack = $allData ? array_keys($this->data) : $this->touched;
         
-        foreach ($this->touched as $key) {
+        foreach ($keysToPack as $key) {
             $value = $this->data[$key];
             
             $expireAt = isset($this->expiresAt[$key]) ? $this->expiresAt[$key] : $time + self::DEFAULT_TTL;
