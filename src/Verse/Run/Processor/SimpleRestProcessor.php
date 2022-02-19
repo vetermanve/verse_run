@@ -15,11 +15,6 @@ use Verse\Run\Spec\HttpResponseSpec;
 
 class SimpleRestProcessor extends RunRequestProcessorProto
 {
-    /**
-     * @var BasicMvcRequestRouter
-     */
-    protected $requestRouter;
-    
     protected $defaultContentType = HttpResponseSpec::CONTENT_JSON;
 
     public function prepare()
@@ -123,21 +118,5 @@ class SimpleRestProcessor extends RunRequestProcessorProto
     {
         $response->setMeta(HttpResponseSpec::META_EXECUTION_TIME, microtime(true) - $request->getMeta(HttpRequestMetaSpec::EXECUTION_START));
         return parent::sendResponse($response, $request);
-    }
-
-    /**
-     * @return BasicMvcRequestRouter
-     */
-    public function getRequestRouter() : BasicMvcRequestRouter
-    {
-        return $this->requestRouter;
-    }
-
-    /**
-     * @param BasicMvcRequestRouter $requestRouter
-     */
-    public function setRequestRouter(BasicMvcRequestRouter $requestRouter)
-    {
-        $this->requestRouter = $requestRouter;
     }
 }
