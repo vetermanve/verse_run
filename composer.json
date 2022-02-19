@@ -17,7 +17,8 @@
     "ralouphie/getallheaders": "^2.0",
     "verse/router": "^1.0",
     "verse/env": "*",
-    "verse/modular": "^1.0"
+    "verse/modular": "^1.0",
+    "ext-json": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.7"
