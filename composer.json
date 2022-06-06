@@ -12,7 +12,7 @@
     }
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.4 || 8.*",
     "monolog/monolog" : "*",
     "ralouphie/getallheaders": "^2.0",
     "verse/router": "^1.0",
@@ -21,7 +21,7 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.7"
+    "phpunit/phpunit": "*"
   },
   "autoload": {
     "psr-4": {"Verse\\Run\\": "src/Verse/Run"}
