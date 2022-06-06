@@ -54,16 +54,26 @@ class ChannelState
     
     public function unpack () 
     {
-        foreach ($this->packed as $key => &$string) {
-            $item = explode(self::PACK_DELIMITER, $string, 3);
-            
-            if (count($item) > 2 && $item[self::DATA_ENCODING] === self::ENCODE_JSON_SIMPLE) {
-                $this->expiresAt[$key] = $item[self::DATA_EXPIRATION];
-                $this->data[$key]      = json_decode($item[self::DATA_BODY], true);
-                $this->signed[$key] = true;
-            } else {
-                $this->data[$key] = $string;
+        foreach ($this->packed as $key => &$data) {
+            if (!is_string($data) || (strpos($data, self::PACK_DELIMITER) === false)) {
+                $this->data[$key] = $data;
                 $this->expiresAt[$key] = time() + self::DEFAULT_TTL;
+            } else {
+                $encodedDataParts = explode(self::PACK_DELIMITER, $data, 3);
+
+                if (count($encodedDataParts) > 2 && $encodedDataParts[self::DATA_ENCODING] === self::ENCODE_JSON_SIMPLE) {
+                    $this->expiresAt[$key] = $encodedDataParts[self::DATA_EXPIRATION];
+                    $this->data[$key] = json_decode($encodedDataParts[self::DATA_BODY], true);
+                    $this->signed[$key] = true;
+                } else if (count($encodedDataParts) > 2 && $encodedDataParts[self::DATA_ENCODING] === self::ENCODE_CAT) {
+                    $this->expiresAt[$key] = $encodedDataParts[self::DATA_EXPIRATION];
+                    $this->data[$key] = $encodedDataParts[self::DATA_BODY];
+                    $this->signed[$key] = true;
+                }
+                else {
+                    $this->data[$key] = $data;
+                    $this->expiresAt[$key] = time() + self::DEFAULT_TTL;
+                }
             }
         }
         
@@ -147,7 +157,7 @@ class ChannelState
                     . self::PACK_DELIMITER
                     . json_encode($value, JSON_UNESCAPED_UNICODE);
             } else if($this->encoder === self::ENCODE_CAT) {
-                $this->packed[$key] = self::ENCODE_JSON_SIMPLE
+                $this->packed[$key] = self::ENCODE_CAT
                     . self::PACK_DELIMITER
                     . $expireAt
                     . self::PACK_DELIMITER
