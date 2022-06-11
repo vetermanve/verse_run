@@ -13,7 +13,7 @@
   ],
   "require": {
     "php": "^7.4 || 8.*",
-    "monolog/monolog" : "^2.6.0",
+    "monolog/monolog" : "2.6.*",
     "ralouphie/getallheaders": "^2.0",
     "verse/router": "^1.0",
     "verse/env": "*",
