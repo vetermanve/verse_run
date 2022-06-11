@@ -2,6 +2,7 @@
 
 namespace Verse\Run\HttpMvcTests;
 
+use PHPUnit\Framework\TestCase;
 use Verse\Run\Channel\MemoryStoreChannel;
 use Verse\Run\Component\CreateDependencyContainer;
 use Verse\Run\Processor\SimpleRestProcessor;
@@ -14,7 +15,7 @@ use Verse\Run\HttpMvcTests\Sample\Controller\TestController;
 use Verse\Run\Spec\HttpResponseSpec;
 use Verse\Run\Util\HttpEnvContext;
 
-class SampleTest extends \PHPUnit_Framework_TestCase
+class SampleTest extends TestCase
 {
     /**
      * This is a test
@@ -57,7 +58,7 @@ class SampleTest extends \PHPUnit_Framework_TestCase
         
         $resultMessage = $channel->getMessage();
 
-        $this->assertEquals($resultMessage->getCode(), HttpResponseSpec::HTTP_CODE_OK, $resultMessage->getBody());
+        $this->assertEquals($resultMessage->getCode(), HttpResponseSpec::HTTP_CODE_OK, json_encode($resultMessage->getBody()));
         $this->assertEquals($resultMessage->getBody(), TestController::RESPONSE_GET);
     }
 }
